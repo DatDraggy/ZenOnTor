@@ -63,6 +63,44 @@ edit your zen.conf and add
 ```
 proxy=127.0.0.1:9050
 onlynet=tor
+``` 
+Afterwards, add the list of nodes from the bottom to your conf.
+
+Restart zend and your node will officially be hidden and outta sight :D
+
+### Windows
+
+#### Install and configure Tor
+
+Download the Tor expert bundle for Windows from `https://www.torproject.org/download/download`and extract the zip file to a subfolder.
+
+Now create a new folder at `%APPDATA%\tor` and create a new text file `%APPDATA%\tor\torrc` and put this in it (note that the file needs to be saved without a `.txt` extension):
+```
+ControlPort 9051
+CookieAuthentication 1
+LongLivedPorts 9033
+```
+
+Now open a command prompt and change to the directory you extracted Tor to e.g.
+```
+cd c:\Downloads\tor-win32-0.3.0.10
+```
+and start tor.exe with
+```
+Tor\tor.exe
+```
+you should see Tor's log output in the command prompt window.
+
+#### Setting up zend to be reachable by other Tor nodes
+
+Same as the Linux guide but use `.\zend.exe`, `.\zen-cli.exe getnetworkinfo` and `%APPDATA%\Zen\onion_private_key`.
+
+#### Connect to Tor nodes only:
+
+Same as the Linux guide but edit the config at `%APPDATA%\Zen\zen.conf`.
+
+### List of Tor nodes:
+```
 addnode=664sm6tboxgulaar.onion
 addnode=k6yjiqxfehnbey5x.onion
 addnode=ktp7b3ffc324zeoq.onion
@@ -154,99 +192,7 @@ addnode=gb4woxmnbwccj5qo.onion
 addnode=5qo75jc6cfabkigf.onion
 addnode=qwhy5nkc4kxigl2v.onion
 addnode=nwe6tb6xxnubkltn.onion
-``` 
-
-Restart zend and your node will officially be hidden and outta sight :D
-
-### Windows
-
-#### Install and configure Tor
-
-Download the Tor expert bundle for Windows from `https://www.torproject.org/download/download`and extract the zip file to a subfolder.
-
-Now create a new folder at `%APPDATA%\tor` and create a new text file `%APPDATA%\tor\torrc` and put this in it (note that the file needs to be saved without a `.txt` extension):
-```
-ControlPort 9051
-CookieAuthentication 1
-LongLivedPorts 9033
-```
-
-Now open a command prompt and change to the directory you extracted Tor to e.g.
-```
-cd c:\Downloads\tor-win32-0.3.0.10
-```
-and start tor.exe with
-```
-Tor\tor.exe
-```
-you should see Tor's log output in the command prompt window.
-
-#### Setting up zend to be reachable by other Tor nodes
-
-Same as the Linux guide but use `.\zend.exe`, `.\zen-cli.exe getnetworkinfo` and `%APPDATA%\Zen\onion_private_key`.
-
-#### Connect to Tor nodes only:
-
-Same as the Linux guide but edit the config at `%APPDATA%\Zen\zen.conf`.
-
-### List of Tor nodes:
-```
-proxy=127.0.0.1:9050
-onlynet=tor
-addnode=664sm6tboxgulaar.onion
-addnode=k6yjiqxfehnbey5x.onion
-addnode=ktp7b3ffc324zeoq.onion
-addnode=k4mndsz24sj2fk7w.onion
-addnode=52ywlur6mlmpl62j.onion
-addnode=e5nntkmas4nxxhxd.onion
-addnode=ifmrspt373jdl6b6.onion
-addnode=4mt3rihnc6jmud3b.onion
-addnode=mdquqngm2zrgkl37.onion
-addnode=xht6hfirwgrsiwob.onion
-addnode=r55o3d2k2adg77ua.onion
-addnode=fydtl3c3mog4zbdp.onion
-addnode=5bbzenaugfyys7mz.onion
-addnode=issfdkq2jj5ljg5f.onion
-addnode=c3hdrvp6tkaq4eaw.onion
-addnode=kzup5swqhk24vkzc.onion
-addnode=eahbq2et2yt5ayoy.onion
-addnode=zqrx7t7ajtltdn7j.onion
-addnode=k5qqpbnxctcv7lo6.onion
-addnode=icwop6z3yekcmplk.onion
-addnode=qy5qyqi6dvcvlfyk.onion
-addnode=chy27pne6xjszsyl.onion
-addnode=jdbffgdgebo3m56g.onion
-addnode=fwjflk4cimeftuhi.onion
-addnode=xkrx5m4jqyzwydky.onion
-addnode=twhb7td2f7oqdnm3.onion
-addnode=stgdahue6pvr2guq.onion
-addnode=qu6p6347mfvpprbw.onion
-addnode=u7hauzipggwtbqqx.onion
-addnode=xy7dymivxqtkqg4o.onion
-addnode=62octnztu77js3ej.onion
-addnode=tigybqpyg3zysm6v.onion
-addnode=7luj6fnpr5ilmj5d.onion
-addnode=md344v42dm6rd6ay.onion
-addnode=caafwewwghymptue.onion
-addnode=qxpwiaar4l6rvz3h.onion
-addnode=r6exvwywoqyn6op3.onion
-addnode=pza5fqmdl3zu32cu.onion
-addnode=etskzar66wheksdd.onion
-addnode=pqbjp4yco7p5pnpk.onion
-addnode=bee4bcaxsg3637xc.onion
-addnode=yylmbfsnavhmq5eh.onion
-addnode=4rhhb2l37jerpxfh.onion
-addnode=qr6dvzrz3g6a6p4e.onion
-addnode=v7mqyhrdxb2bqgze.onion
-addnode=qg4guuwggvbyjigw.onion
-addnode=eorrku3hauy53zup.onion
-addnode=xqrvu4rxw7pulgb3.onion
-addnode=mbkpyfwjudi423xp.onion
-addnode=vxp6kyw6hhjzu7r2.onion
-addnode=ayeypndttmb54eeu.onion
-addnode=wchizsqjxr3vtmm6.onion
-addnode=bdfdc3ch5feattda.onion
-addnode=gbqx534g4it22bj6.onion
+addnode=xf5bpgwevpxokqv3.onion
 ```
 
 Submit a PR to have yours added!
